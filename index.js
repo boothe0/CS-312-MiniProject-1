@@ -5,7 +5,7 @@ const app = express()
 const port = 3000;
 let blog_post_array = []
 class BlogPost {
-  constructor(name, date, blog_title, blog_information, category){
+  constructor(name, date, blog_title, blog_information){
     this.name = name;
     this.date = date;
     this.blog_title = blog_title;
@@ -57,7 +57,6 @@ app.post("/submit", (req, res) => {
       req.body.date,
       req.body.blog_title,
       req.body.blog_information,
-      req.body.category
     );
     blog_post_array.push(newBlogPost);
     console.log(blog_post_array);
